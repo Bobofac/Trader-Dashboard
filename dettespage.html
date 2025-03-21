@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page des dettes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    /* Switch Button */
+.switch-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#toggleAccount {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.switch:before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .switch {
+    background-color: #007bff;
+}
+
+input:checked + .switch:before {
+    transform: translateX(14px);
+}
+
+/* Champs cachés */
+.account-fields {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+    input{
+    border-radius: 5px;
+    padding: 3px;
+    outline-color: #007bff;
+    margin-bottom: 5px;
+}
+}
+
+#toggleAccount:checked ~ .account-fields {
+    max-height: 120px;
+    opacity: 1;
+}
+.button-container button{
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+</style>
+</head>
+<body>
+    <!-- --------------------Hero----------------------- -->
+    <section class="hero">
+
+        <!-- --------------------Header----------------------- -->
+        <header class="header">
+            <div class="search"><input type="search" placeholder="Rechercher dans votre boutique"></div>
+            <h4 class="user-name">Ousseynou Diedhiou</h4>
+            <div class="user">
+                <img src="profil picture.jpg" alt="User">
+            </div>
+        </header>
+        <!-- --------------------/Header----------------------- -->
+    
+        <!-- --------------------Sidebar----------------------- -->
+        <aside class="sidebar">
+            <div class="side-title">
+                <h1>Gestion Boutique</h1>
+            </div>
+            <div class="side-nav">
+                <ul>
+                    <li><a href="homepage.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li><a href="dettespage.html"><i class="fa-solid fa-dollar-sign"></i> Dettes</a></li>
+                    <li><a href="pageclients.html"><i class="fa-solid fa-users"></i> Clients</a></li>
+                    <li><a href="articlespage.html"><i class="fa-solid fa-cube"></i> Articles</a></li>
+                    <li><a href="#"><i class="fa-solid fa-envelope"></i> Demandes</a></li>
+                    <li><a href="#"><i class="fa-solid fa-users-line"></i> Utilisateurs</a></li>
+                </ul>
+            </div>
+        </aside>
+        <!-- --------------------/Sidebar----------------------- -->
+
+        <div class="dette-container">
+
+            <div class="dette-form1">
+                <h2><i class="fa-solid fa-user"></i> Nouveau Client</h2>
+                <form action="#">
+                    <label for="client"><i class="fa-solid fa-user"></i> Prenom</label>
+                    <input type="text" id="client" name="client" required>
+                    <label for="nom"><i class="fa-solid fa-user"></i> Nom</label>
+                    <input type="text" id="nom" name="nom" required>
+                    <label for="number"><i class="fa-solid fa-phone"></i> Téléphone</label>
+                    <input type="tel" id="number" name="number" required>
+                    <label for="adresse"><i class="fa-solid fa-location-dot"></i> Adresse</label>
+                    <input type="text" id="adresse" name="adresse" required>
+                    <label for="photo"><i class="fa-solid fa-camera"></i> Photo</label>
+                    <input type="file" id="photo" name="photo" required>
+                    
+            
+                    <!-- CHAMPS MASQUÉS -->
+                </form>
+                <!-- <div class="switch-container"> -->
+                    
+                    <label for="toggleAccount">Créer un compte :</label>
+                    <input type="checkbox" id="toggleAccount">
+                    <label for="toggleAccount" class="switch"></label>
+                    
+                <!-- </div> -->
+                <div class="account-fields">
+                    <label for="email"><i class="fa-solid fa-user"></i> Login</label>
+                    <input type="email" id="email" placeholder="email@example.com">
+        
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Mot de passe">
+                </div>
+        
+                <div class="button-container"><button class="red-btn">Annuler</button>
+                <button type="submit" class="blue-btn">Enregitrer</button></div>
+            </div>
+            <div class="dette-form2">
+                <h2><i class="fa-solid fa-search"></i> Suivi de Dette</h2>
+                <div class="tel">
+                    <label for="tel"><i class="fa-solid fa-phone"></i> Tél:</label>
+                    <input type="tel">
+                    <button class="blue-btn">OK</button>
+                </div>
+                <div class="buttons">
+                    <button class="red-btn">Info</button>
+                    <button class="gray-btn">Dettes</button>
+                    <button class="blue-btn">+Nouvelle</button>
+                </div>
+                <div class="formula">
+                    <div class="circle"></div>
+                    <form action="#">
+                        <label for="nom"><i class="fa-solid fa-user"></i> Nom</label>
+                        <input type="text" id="nom" name="nom" required>
+                        <label for="prenom"><i class="fa-solid fa-user"></i> Prénom</label>
+                        <input type="text" id="prenom" name="prenom" required>
+                        <label for="adress"><i class="fa-solid fa-location-dot"></i> Adresse</label>
+                        <input type="text" id="adress" name="adress" required>
+                    </form>
+                    <div class="square">Code QR</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+        <!-- --------------------/Hero----------------------- -->
+    
+</body>
+</html>

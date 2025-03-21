@@ -1,0 +1,984 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  :root {
+    --primary-color:#1d4ed8 ;
+    --secondary-color: #D9B918;
+    --text-color: #F8F8F8;
+    --text-color2: black;
+    --background-color: #FFFFF;
+}
+
+/* ---------------------------------- Connect section ------------------------------- */
+.conexion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    height: 100vh;
+}
+.conexion-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60%;
+    width: 55%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+
+.conect-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary-color);
+    width: 50%;
+    height: 100%;
+    padding: 55px;
+    transition: all 0.5s ease;
+}
+.market-img{
+    width: 60px;
+    height: 65px;
+    border: 1px solid white;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.conect-left img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.conect-left .conect-title h3{
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.conect-left .greet h1{
+    color: var(--text-color);
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 35px;
+}
+
+.conect-left .greet p{
+    color: var(--text-color);
+    font-size: 12px;
+    /* font-weight: 400; */
+    margin-bottom: 20px;
+}
+
+.conect-right{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    transition: all 0.5s ease;
+    /* background-color: #D9B918; */
+}
+
+.conect-right h2, .conect-right p{
+  text-align: left;
+  margin-left: 20px;
+}
+
+.conect-right h2{
+  font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.conect-right p{
+  font-size: 12px;
+}
+
+.form-right{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+.form-right label{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+}
+.form-right input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    padding: 5px;
+    transition: all 0.5s ease;
+    outline-color: #0645f3;
+}
+
+.form-right button{
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    a{
+      text-decoration: none;
+      color: var(--text-color);
+    }
+}
+
+.form-right button:hover{
+    background-color: #0645f3;
+}
+
+.forgot-password{
+ display: flex;
+ justify-content: space-evenly;
+ gap: 125px;
+ font-size: 13px;
+ transition: all 0.5s ease;
+ margin-bottom: 10px;
+}
+.forgot-password a{
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.forgot-password p{
+  color: gray;
+}
+
+.clients button{
+  width: 90%;
+  background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+/* ---------------------------------- HOMEPAGE section ------------------------------- */
+.hero{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas: 
+    "sidebar header"
+    "sidebar main";
+  background-color: var(--background-color);
+}
+
+/* ---------------------------------- Sidebar section ------------------------------- */
+.sidebar{
+  grid-area: sidebar;
+  background-color: #1E4976;
+  color: var(--text-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.sidebar h1{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.side-nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-nav ul li{
+  margin-bottom: 20px;
+  padding: 5px;
+  transition: all 0.5s ease;
+}
+
+.side-nav ul li:hover{
+  background-color: black;
+  border-radius: 5px;
+}
+
+.side-nav ul li a{
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.5s ease;
+}
+
+.side-nav ul li a:hover{
+  padding-left: 5px;
+}
+
+/* ---------------------------------- Header section ------------------------------- */
+.header{
+  width: 100%;
+  height: auto;
+  grid-area: header;
+  /* background-color: red; */
+  color: var(--text-color);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid wheat;
+}
+
+.header .search input{
+  width: 1040px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  transition: all 0.5s ease;
+  outline-color: #0645f3;
+}
+
+.header h4{
+  font-size: 12px;
+  padding: 10px;
+  color: var(--text-color2);
+  text-align: center;
+}
+
+.user img{
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: all 0.5s ease;
+}
+
+/* ---------------------------------- Main section ------------------------------- */
+
+.main{
+  grid-area: main;
+  background-color: var(--background-color);
+  /* color: var(--text-color); */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+.cartes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.5s ease;
+}
+
+.carte{
+  background-color: #1E4976;
+  width: 300%;
+  height: auto;
+  padding: 15px;
+  border-radius: 5px;
+
+  .part1 p{
+    color: var(--text-color);
+    font-size: 13px;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+    opacity: 0.8;
+  }
+  .part2 h1{
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: all 0.5s ease;
+  }
+  .part3 p{
+    color: var(--text-color);
+    font-size: 13px;
+    transition: all 0.5s ease;
+    opacity: 0.9;
+
+  }
+}
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+
+/* -----------------------------------Homepage Dashboard Section -------------------------------------- */
+.tableau{
+  display: flex;
+  /* justify-content: space-between; */
+}
+.tableau table th{
+  background-color: #1E4976;
+  color: var(--text-color);
+  font-size: 14px;
+  
+}
+.tableau table{
+  border-collapse: collapse;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.table1{
+  width: 50%;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+.tableau .table1 table{
+  width: 100%;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+
+.tableau .table1 table th, td{
+  padding: 5px;
+  text-align: left;
+  font-size: 13px;
+}
+.table2{
+  width: 50%;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+.tableau .table2 table{
+  width: 100%;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+
+.tableau .table2 table th, td{
+  padding: 5px;
+  text-align: left;
+  transition: all 0.5s ease;
+}
+.table1 h3, .table2 h3{
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* ------------------------------------ Client Page --------------------------------- */
+.client-container{
+  padding: 20px;
+}
+
+.client-container h2{
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.client-container .add-client{
+  float: right;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: #007BFF;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.client-container table{
+  border-collapse: collapse;
+  box-shadow: rgba(96, 92, 92, 0.24) 0px 3px 8px;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.client-container table th, td{
+  padding: 15px;
+  font-size: 13px;
+}
+.client-container table th{
+  background-color: #1E4976;
+  color: var(--text-color);
+  font-size: 13px;
+  text-align: left;
+}
+.client-table{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.client-table .table-btn{
+  text-decoration: none;
+  color: var(--text-color);
+  background-color: #007BFF;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.client-table .pagination{
+  display: flex;
+  justify-content: right;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.client-table .pagination a{
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.page{
+  background-color: #007BFF;
+}
+
+.gray{
+  background-color: gray;
+  opacity: 0.5;
+}
+
+/* ----------------------------------------- Page des dettes --------------------------------------- */
+.dette-container{
+  padding: 20px;
+  display: flex;
+  background-color: rgb(236, 236, 242);
+  /* height: 80%; */
+  margin: 15px 15px;
+  gap: 20px;
+}
+
+.dette-form1{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+
+  h2{
+    font-size: 15px;
+    padding: 10px;
+    color: #1E4976;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+
+    input{
+      padding: 2px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+      outline-color: #0645f3;
+    }
+
+    label{
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    button{
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      width: 100px;
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.red-btn{
+  background-color: red;
+  color: white;
+  border: none;
+}
+
+.blue-btn{
+  background-color: #007BFF;
+  color: white;
+  border: none;
+}
+
+.gray-btn{
+  background-color: gray;
+  color: white;
+  border: none;
+}
+
+.dette-form2{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  height: 350px;
+
+  h2{
+    font-size: 15px;
+    padding: 10px;
+    color: #1E4976;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.tel{
+  padding: 10px;
+  font-size: 13px;
+
+  label{
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  input{
+    padding: 2px;
+    /* margin-bottom: 15px; */
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    outline-color: #0645f3;
+    width: 94%;
+  }
+
+  button{
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 10px;
+
+  button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+}
+
+.formula {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  form{
+    width: 60%;
+
+    label{
+      font-size: 13px;
+    }
+
+    input{
+      padding: 2px;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+      outline-color: #0645f3;
+    }
+  }
+}
+
+.formula .circle{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(236, 236, 242);
+  color: white;
+  padding: 3px;
+}
+
+.formula .square{
+  width: 100px;
+  height: 100px;
+  background-color: rgb(239, 239, 247);
+  padding: 3px;
+  text-align: center;
+}
+
+/* ------------------------------------------- Article Section ---------------------------------------- */
+.section-article{
+  padding: 30px;
+
+  h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.article-container{
+  display: flex;
+  gap: 20px;
+}
+
+.product-list, .product{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  border-radius: 5px;
+  padding: 10px;
+
+  h3{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+.product-list button{
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin-bottom: 10px;
+}
+
+.product-list input{
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  outline-color: #0645f3;
+}
+
+.product-list table{
+  border-collapse: collapse;
+  width: 100%;
+  transition: all 0.5s ease;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 10px;
+
+  th{
+    background-color: #1E4976;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  th, td{
+    padding: 10px;
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+.product-list .paginations1{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+}
+.product-list a{
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  padding: 5px 10px;
+}
+
+.product .new{
+  width: 120px;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.product .head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product p{
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.product table{
+  border-collapse: collapse;
+  width: 100%;
+  transition: all 0.5s ease;
+  margin-bottom: 20px;
+
+  th{
+    background-color: #1E4976;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+.product .paginations2{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  a{
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.5s ease;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  padding: 5px 10px;
+  }
+}
+
+.product .save{
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  margin-bottom: 10px;
+}
+/* --------------res side */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Sidebar Bars */
+#check{
+  display: none;
+}
+label #btn, label #cancel{
+  position: absolute;
+}
+label #btn{
+  left: -10px;
+  top: 25px;
+  padding: 6px 12px;
+  font-size: 20px;
+  opacity: 0;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 25px;
+  padding: 6px 12px;
+  color: red;
+}
+
+/* ----------------------------------------- Responsivity --------------------------------------- */
+
+@media screen and (max-width: 768px){
+  /* ----------- Menu Toggle ---------------- */
+  .sidebar{
+    transition: all 0.5s ease;
+    width: 20%;
+  position: absolute;
+  left: -350px;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  }
+  label #btn{
+    opacity: 1;
+  }
+  #check:checked ~ .sidebar{
+    left: 0;
+    width: 100%;
+
+  }
+  #check:checked ~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #check:checked ~ label #cancel{
+    left: 250px;
+    opacity: 0;
+  }
+  #check:checked ~ label #cancel{
+   left: 290px;
+    opacity: 1;
+  }
+  #check ~ .header{
+    margin-left: -100px;
+  }
+  #check ~ .main{
+    margin-left: -100px;
+  }
+  /* -------- Formulaire --------- */
+  .conexion-container{
+      flex-direction: column;
+      width: 90%;
+      height: auto;
+      padding: 10px;
+    }
+    .conect-left{
+      width: 100%;
+      height: 100%;
+    }
+    .conect-right{
+      width: 100%;
+      height: 100%;
+    }
+    /* ------------ header -------------------- */
+    .header .search input{
+      width: 100%;
+    }
+    
+    /* ------------ Sidebar -------------------- */
+    .sidebar{
+      /* display: none; */
+    }
+    /* ---------- Homepage ----------- */
+  .cartes{
+    flex-wrap: wrap;
+  }
+   .carte{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+  .tableau{
+    flex-direction: column;
+    width: 100%;
+  }
+  .tableau .table1{
+    width: 100%;
+    
+  }
+  .tableau .table2{
+    width: 100%;
+    
+  }
+   /* -------------- Dette -------- */
+   .dette-container{
+    flex-direction: column;
+   }
+   .dette-form1{
+    width: 100%;
+    padding: 10px;
+   }
+   .dette-form2{
+    width: 100%;
+    padding: 10px;
+
+    .tel input{
+      width: 90%;
+    }
+   }
+   /* ----------- Article ---------------- */
+   .article-container{
+    flex-direction: column;
+    width: 100%;
+  }
+  .product-list{
+    width: 100%;
+  }
+  .product {
+    width: 100%;
+  }
+}

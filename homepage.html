@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- --------------------Hero----------------------- -->
+    <section class="hero">
+<input type="checkbox" id="check">
+    <!-- --------------------Header----------------------- -->
+    <header class="header">
+        <div class="search"><input type="search" placeholder="Rechercher dans votre boutique"></div>
+        <h4 class="user-name">Ousseynou Diedhiou</h4>
+        <div class="user">
+            <img src="profil picture.jpg" alt="User">
+        </div>
+    </header>
+    <!-- --------------------/Header----------------------- -->
+
+    <!-- --------------------Sidebar----------------------- -->
+    
+    <label for="check"><i class="fa-solid fa-bars" id="btn"></i> <i class="fa-solid fa-bars" id="cancel"></i></label>
+    <aside class="sidebar">
+        <div class="side-title">
+            <h1>Gestion Boutique</h1>
+        </div>
+        <div class="side-nav">
+            <ul>
+                <li><a href="homepage.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="dettespage.html"><i class="fa-solid fa-dollar-sign"></i> Dettes</a></li>
+                <li><a href="pageclients.html"><i class="fa-solid fa-users"></i> Clients</a></li>
+                <li><a href="articlespage.html"><i class="fa-solid fa-cube"></i> Articles</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i> Demandes</a></li>
+                <li><a href="#"><i class="fa-solid fa-users-line"></i> Utilisateurs</a></li>
+            </ul>
+        </div>
+    </aside>
+    <!-- --------------------/Sidebar----------------------- -->
+
+    <!-- --------------------Main----------------------- -->
+    <main class="main">
+        <div class="cartes">
+            <div class="carte">
+                <div class="part1">
+                    <p><i class="fa-solid fa-dollar-sign"></i> Total des Dettes</p>
+                </div>
+                <div class="part2">
+                    <h1>500.000 CFA</h1>
+                </div>  
+                <div class="part3">
+                    <p><span class="green">+3.5%</span> depuis le moi dernier</p>
+                </div>   
+            </div>
+            <div class="carte">
+                <div class="part1">
+                    <p><i class="fa-solid fa-users"></i> Nombre de Clients</p>
+                </div>
+                <div class="part2">
+                    <h1>120</h1>
+                </div>  
+                <div class="part3">
+                    <p><span class="green">+5%</span> depuis la semaine derniere</p>
+                </div>   
+            </div>
+            <div class="carte">
+                <div class="part1">
+                    <p><i class="fa-solid fa-cube"></i> Articles en Stock</p>
+                </div>
+                <div class="part2">
+                    <h1>250</h1>
+                </div>  
+                <div class="part3">
+                    <p><span class="red">-2%</span> depuis hier</p>
+                </div>   
+            </div>
+            <div class="carte">
+                <div class="part1">
+                    <p><i class="fa-solid fa-message"></i> Demandes en cours</p>
+                </div>
+                <div class="part2">
+                    <h1>15</h1>
+                </div>  
+                <div class="part3">
+                    <p><span class="green">+10%</span> depuis hier</p>
+                </div>   
+            </div>
+        </div>
+        <div class="tableau">
+          <div class="table1">
+            <h3>Liste des Clients</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Téléphone</th>
+                        <th>Montant Dettes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>77 123 45 67</td>
+                        <td>45000 CFA</td>
+                    </tr>
+                    <tr>
+                        <td>Amina</td>
+                        <td>Diop</td>
+                        <td>78 987 65 43</td>
+                        <td>35000 CFA</td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+         <div class="table2">
+            <h3>Articles en Rupture de Stock</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Article</th>
+                        <th>Quantité Restante</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Savon</td>
+                        <td>0</td>
+                        <td>2020 CFA</td>
+                    </tr>
+                    <tr>
+                        <td>Shampoing</td>
+                        <td>2</td>
+                        <td>2020 CFA</td>
+                    </tr>
+                </tbody>
+            </table>
+         </div>
+        </div>
+    
+    </main>
+    <!-- --------------------/Main----------------------- -->
+
+</section>
+    <!-- --------------------/Hero----------------------- -->
+</body>
+</html>

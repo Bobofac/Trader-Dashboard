@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page des Clients</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .modal {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#the-2popover::backdrop{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.cancel {
+    background-color: #d9534f;
+    color: white;
+}
+
+.cancel:hover {
+    background-color: #c9302c;
+    transform: scale(1.05);
+}
+
+.save {
+    background-color: #007bff;
+    color: white;
+}
+
+.save:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Switch Button */
+.switch-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.switch-container input {
+    display: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.switch:before {
+    content: "";
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .switch {
+    background-color: #007bff;
+}
+
+input:checked + .switch:before {
+    transform: translateX(14px);
+}
+
+/* Champs cachés */
+.account-fields {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+#toggleAccount:checked ~ .account-fields {
+    max-height: 100px;
+    opacity: 1;
+}
+    </style>
+</head>
+<body>
+     <!-- --------------------Hero----------------------- -->
+    <section class="hero">
+
+        <!-- --------------------Header----------------------- -->
+        <header class="header">
+            <div class="search"><input type="search" placeholder="Rechercher dans votre boutique"></div>
+            <h4 class="user-name">Ousseynou Diedhiou</h4>
+            <div class="user">
+                <img src="profil picture.jpg" alt="User">
+            </div>
+        </header>
+        <!-- --------------------/Header----------------------- -->
+    
+        <!-- --------------------Sidebar----------------------- -->
+        <aside class="sidebar">
+            <div class="side-title">
+                <h1>Gestion Boutique</h1>
+            </div>
+            <div class="side-nav">
+                <ul>
+                    <li><a href="homepage.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                    <li><a href="dettespage.html"><i class="fa-solid fa-dollar-sign"></i> Dettes</a></li>
+                    <li><a href="pageclients.html"><i class="fa-solid fa-users"></i> Clients</a></li>
+                    <li><a href="articlespage.html"><i class="fa-solid fa-cube"></i> Articles</a></li>
+                    <li><a href="#"><i class="fa-solid fa-envelope"></i> Demandes</a></li>
+                    <li><a href="#"><i class="fa-solid fa-users-line"></i> Utilisateurs</a></li>
+                </ul>
+            </div>
+        </aside>
+        <!-- --------------------/Sidebar----------------------- -->
+    
+        <!-- --------------------Clients Section----------------------- -->
+        <div class="client-container">
+            <div class="client-title">
+                <h2>Liste des Clients</h2>
+                <button class="add-client" popovertarget="the-2popover">Nouveau Client</button>
+            </div>
+             <div popover id="the-2popover" class="modal">
+                <div class="modal-content">
+                    <h2>🧑‍💼 Nouveau Client</h2>
+            
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" placeholder="Prénom">
+            
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" placeholder="Nom">
+            
+                    <label for="telephone">Téléphone</label>
+                    <input type="text" id="telephone" placeholder="Téléphone">
+            
+                    <label for="adresse">Adresse</label>
+                    <input type="text" id="adresse" placeholder="Adresse">
+            
+                    <label for="photo">Photo</label>
+                    <input type="file" id="photo">
+            
+                    <!-- SWITCH BUTTON -->
+                    <div class="switch-container">
+                        <label for="toggleAccount">Créer un compte :</label>
+                        <input type="checkbox" id="toggleAccount">
+                        <label for="toggleAccount" class="switch"></label>
+                    </div>
+            
+                    <!-- CHAMPS MASQUÉS -->
+                    <div class="account-fields">
+                        <label for="email">Login (Email)</label>
+                        <input type="email" id="email" placeholder="email@example.com">
+            
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Mot de passe">
+                    </div>
+            
+                    <div class="buttons">
+                        <button class="cancel">Annuler</button>
+                        <button class="save">Enregistrer</button>
+                    </div>
+                </div>
+            </div>
+            <div class="client-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Téléphone</th>
+                            <th>Adresse</th>
+                            <th>Montant</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ousseynou Diallo</td>
+                            <td>784377814</td>
+                            <td>Dakar,Sénégal</td>
+                            <td>5,000 FCFA</td>
+                            <td><a href="#" class="table-btn">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Modou Fall</td>
+                            <td>724377814</td>
+                            <td>Thiés,Sénégal</td>
+                            <td>15,000 FCFA</td>
+                            <td><a href="#" class="table-btn">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Amina Diallo</td>
+                            <td>774377814</td>
+                            <td>Kolda,Sénégal</td>
+                            <td>10,000 FCFA</td>
+                            <td><a href="#" class="table-btn">Details</a></td>
+                        </tr>
+                        <tr>
+                            <td>Moussa Fall</td>
+                            <td>704377814</td>
+                            <td>Kaolack,Sénégal</td>
+                            <td>10,000 FCFA</td>
+                            <td><a href="#" class="table-btn">Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <a href="#" class="prev gray"><</a>
+                    <a href="#" class="page">1</a>
+                    <a href="#" class="next gray">></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- --------------------/Hero----------------------- -->
+</body>
+</html>
